@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testFondyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiV-sg-geN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gke-q4-WNo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="801"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-VH-O95">
+                                                <rect key="frame" x="175" y="393" width="137" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moj-Bc-SRo" customClass="PSCardInputLayout">
+                                                <rect key="frame" x="8" y="196" width="292" height="209"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L98-mf-jXJ" customClass="PSCardNumberTextField">
+                                                        <rect key="frame" x="8" y="20" width="269" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iot-5X-xOV" customClass="PSExpMonthTextField">
+                                                        <rect key="frame" x="8" y="84" width="130" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afx-tt-jNN" customClass="PSExpYearTextField">
+                                                        <rect key="frame" x="190" y="84" width="87" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58m-A6-ZRG" customClass="PSCVVTextField">
+                                                        <rect key="frame" x="8" y="147" width="130" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdA-VD-UUT">
+                                                <rect key="frame" x="22" y="67" width="264" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-kd-qUj">
+                                                <rect key="frame" x="22" y="131" width="264" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijJ-UJ-FWP">
+                                                <rect key="frame" x="5" y="450" width="307" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.55294117649999996" green="0.74901960779999999" blue="0.41888180400000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                <state key="normal" title="Pay">
+                                                    <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="payButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajd-Kd-7Oq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hO-Ng-LIA">
+                                                <rect key="frame" x="139" y="412" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Test"/>
+                                                <connections>
+                                                    <action selector="testButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wEM-cY-00O"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nbz-lx-b7E">
+                                                <rect key="frame" x="22" y="8" width="264" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="801" id="5j0-Tp-h5m"/>
+                                        </constraints>
+                                    </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZhI-6S-Qo7">
+                                        <rect key="frame" x="141.5" y="305.5" width="37" height="37"/>
+                                        <color key="color" red="0.55294117649999996" green="0.74901960779999999" blue="0.41888180400000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gke-q4-WNo" firstAttribute="centerX" secondItem="fiV-sg-geN" secondAttribute="centerX" id="0Rw-vT-YR2"/>
+                                    <constraint firstItem="ZhI-6S-Qo7" firstAttribute="centerY" secondItem="fiV-sg-geN" secondAttribute="centerY" id="83g-Xs-ekd"/>
+                                    <constraint firstItem="gke-q4-WNo" firstAttribute="leading" secondItem="fiV-sg-geN" secondAttribute="leading" id="9RX-Lw-2x6"/>
+                                    <constraint firstItem="gke-q4-WNo" firstAttribute="top" secondItem="fiV-sg-geN" secondAttribute="top" id="Eat-Cb-31D"/>
+                                    <constraint firstAttribute="bottom" secondItem="gke-q4-WNo" secondAttribute="bottom" id="R1D-IL-9FV"/>
+                                    <constraint firstAttribute="trailing" secondItem="gke-q4-WNo" secondAttribute="trailing" id="SLD-gQ-0NN"/>
+                                    <constraint firstItem="ZhI-6S-Qo7" firstAttribute="centerX" secondItem="fiV-sg-geN" secondAttribute="centerX" id="xrr-Bw-jsA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fiV-sg-geN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ea5-2Y-W1P"/>
+                            <constraint firstItem="fiV-sg-geN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fa9-Ck-BYU"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fiV-sg-geN" secondAttribute="bottom" constant="-99" id="TiD-45-has"/>
+                            <constraint firstItem="fiV-sg-geN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ud2-H0-9DW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ZhI-6S-Qo7" id="EUn-tf-8kh"/>
+                        <outlet property="cardLayout" destination="moj-Bc-SRo" id="d2L-XP-Ud6"/>
+                        <outlet property="cardNumberTextField" destination="L98-mf-jXJ" id="FAd-As-9Li"/>
+                        <outlet property="currencyTextField" destination="Nbz-lx-b7E" id="iyl-jA-S2F"/>
+                        <outlet property="cvvTextField" destination="58m-A6-ZRG" id="eN2-B1-JsE"/>
+                        <outlet property="descriptionTextField" destination="2kQ-kd-qUj" id="HPm-8X-506"/>
+                        <outlet property="emailTextField" destination="zdA-VD-UUT" id="IlI-Bj-aLN"/>
+                        <outlet property="monthTextField" destination="iot-5X-xOV" id="67g-8Q-Y3V"/>
+                        <outlet property="priceTextField" destination="VvZ-VH-O95" id="ucB-F0-0uB"/>
+                        <outlet property="scrollView" destination="fiV-sg-geN" id="RhD-R3-BwE"/>
+                        <outlet property="yearTextField" destination="afx-tt-jNN" id="eGh-rz-cYW"/>
+                        <outletCollection property="fields" destination="zdA-VD-UUT" collectionClass="NSMutableArray" id="T9B-tc-nhi"/>
+                        <outletCollection property="fields" destination="2kQ-kd-qUj" collectionClass="NSMutableArray" id="hlY-Ym-k4M"/>
+                        <outletCollection property="fields" destination="L98-mf-jXJ" collectionClass="NSMutableArray" id="ERy-aU-Z1O"/>
+                        <outletCollection property="fields" destination="iot-5X-xOV" collectionClass="NSMutableArray" id="qpo-40-luw"/>
+                        <outletCollection property="fields" destination="afx-tt-jNN" collectionClass="NSMutableArray" id="fBd-y1-vAN"/>
+                        <outletCollection property="fields" destination="58m-A6-ZRG" collectionClass="NSMutableArray" id="fJx-vu-MUl"/>
+                        <outletCollection property="fields" destination="VvZ-VH-O95" collectionClass="NSMutableArray" id="787-kw-30P"/>
+                        <outletCollection property="fields" destination="Nbz-lx-b7E" collectionClass="NSMutableArray" id="yGP-5s-DaR"/>
+                        <segue destination="0Jh-Aj-Y3Q" kind="presentation" identifier="toResult" id="5WB-J9-G5L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.75" y="133.09859154929578"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="k51-Bt-FRE">
+            <objects>
+                <viewController id="0Jh-Aj-Y3Q" customClass="ResultViewController" customModule="testFondyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c2I-nD-4FV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsA-h1-gyQ" customClass="PSCVVTextField">
+                                <rect key="frame" x="67" y="574" width="240" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zir-5d-6U1">
+                                <rect key="frame" x="127" y="480" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="go back"/>
+                                <connections>
+                                    <segue destination="Bv1-qq-VTZ" kind="unwind" unwindAction="payUnwindWithSegue:" id="M4O-cm-k11"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf6-FL-LML">
+                                <rect key="frame" x="39" y="106" width="252" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9873046875" green="0.81980708430000004" blue="0.42594506189999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ARK-QQ-jWZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="Zf6-FL-LML" id="ZZv-JS-4hP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJR-me-u9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bv1-qq-VTZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="903.75" y="133.09859154929578"/>
+        </scene>
+    </scenes>
+</document>

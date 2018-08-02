@@ -1,0 +1,6 @@
+framework module Cloudipsp {
+  umbrella header "Cloudipsp-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - Cloudipsp (0.2.9)
+
+DEPENDENCIES:
+  - Cloudipsp
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Cloudipsp
+
+SPEC CHECKSUMS:
+  Cloudipsp: 2d613f40b699f52423b222a14cb1ed22ca4136f7
+
+PODFILE CHECKSUM: 4fb38c15a45a2edf92d979f5c5037fa4aa463bc8
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSCardInputView">
+            <connections>
+                <outlet property="cardInputLayout" destination="aQM-jT-g18" id="E4o-Jv-hvR"/>
+                <outlet property="cardNumberLabel" destination="bZS-Bh-CFp" id="Evi-e0-wdb"/>
+                <outlet property="cardNumberTextField" destination="kya-L7-iy6" id="SdP-l8-hhb"/>
+                <outlet property="cvvLabel" destination="9hn-HI-27c" id="yGk-Wh-cvk"/>
+                <outlet property="cvvTextField" destination="ZY0-1Y-fK2" id="8Qn-Rs-dnd"/>
+                <outlet property="expMonthTextField" destination="BII-pG-Ezb" id="gdh-cv-Scm"/>
+                <outlet property="expYearTextField" destination="AWK-F7-Hc7" id="VrR-JV-2lW"/>
+                <outlet property="expiryLabel" destination="tbj-0D-tIH" id="E50-g4-lvn"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Qhf-Kt-A5h"/>
+                <outletCollection property="fields" destination="kya-L7-iy6" id="Fko-kQ-APg"/>
+                <outletCollection property="fields" destination="BII-pG-Ezb" id="X95-3T-gQs"/>
+                <outletCollection property="fields" destination="AWK-F7-Hc7" id="cbX-mh-rn0"/>
+                <outletCollection property="fields" destination="ZY0-1Y-fK2" id="pT8-Ev-HjC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="209"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQM-jT-g18" customClass="PSCardInputLayout">
+                    <rect key="frame" x="0.0" y="0.0" width="404" height="209"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZS-Bh-CFp">
+                            <rect key="frame" x="20" y="8" width="88.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kya-L7-iy6" customClass="PSCardNumberTextField">
+                            <rect key="frame" x="20" y="33" width="364" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="xIX-4j-ZUh"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-0D-tIH">
+                            <rect key="frame" x="20" y="71" width="44" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BII-pG-Ezb" customClass="PSExpMonthTextField">
+                            <rect key="frame" x="20" y="96" width="178" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="cyl-ex-J8C"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWK-F7-Hc7" customClass="PSExpYearTextField">
+                            <rect key="frame" x="206" y="96" width="178" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="ZeU-hg-FpO"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hn-HI-27c">
+                            <rect key="frame" x="20" y="134" width="32" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-1Y-fK2" customClass="PSCVVTextField">
+                            <rect key="frame" x="20" y="159" width="364" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="E2x-zJ-4dG"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="AWK-F7-Hc7" firstAttribute="centerY" secondItem="BII-pG-Ezb" secondAttribute="centerY" id="0eW-IE-IA1"/>
+                        <constraint firstItem="tbj-0D-tIH" firstAttribute="top" secondItem="kya-L7-iy6" secondAttribute="bottom" constant="8" symbolic="YES" id="3yK-t7-T5q"/>
+                        <constraint firstItem="ZY0-1Y-fK2" firstAttribute="top" secondItem="9hn-HI-27c" secondAttribute="bottom" constant="8" symbolic="YES" id="9FT-JX-Ocs"/>
+                        <constraint firstItem="bZS-Bh-CFp" firstAttribute="top" secondItem="aQM-jT-g18" secondAttribute="top" constant="8" id="O2a-aZ-fR8"/>
+                        <constraint firstItem="AWK-F7-Hc7" firstAttribute="leading" secondItem="BII-pG-Ezb" secondAttribute="trailing" constant="8" symbolic="YES" id="O8z-7W-Wzw"/>
+                        <constraint firstItem="ZY0-1Y-fK2" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="QU2-FJ-bMc"/>
+                        <constraint firstAttribute="trailing" secondItem="ZY0-1Y-fK2" secondAttribute="trailing" constant="20" symbolic="YES" id="T9F-Zz-MMH"/>
+                        <constraint firstItem="BII-pG-Ezb" firstAttribute="top" secondItem="tbj-0D-tIH" secondAttribute="bottom" constant="8" symbolic="YES" id="VSs-9g-Xi0"/>
+                        <constraint firstItem="kya-L7-iy6" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="W05-eo-Fm3"/>
+                        <constraint firstItem="9hn-HI-27c" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="ZT1-hx-bcd"/>
+                        <constraint firstAttribute="trailing" secondItem="kya-L7-iy6" secondAttribute="trailing" constant="20" symbolic="YES" id="aQ6-Vs-ZtC"/>
+                        <constraint firstItem="tbj-0D-tIH" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="ad0-5u-TeU"/>
+                        <constraint firstItem="bZS-Bh-CFp" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="gCB-pV-Eot"/>
+                        <constraint firstAttribute="trailing" secondItem="AWK-F7-Hc7" secondAttribute="trailing" constant="20" symbolic="YES" id="gsX-yx-MTB"/>
+                        <constraint firstItem="9hn-HI-27c" firstAttribute="top" secondItem="BII-pG-Ezb" secondAttribute="bottom" constant="8" symbolic="YES" id="jQk-4m-9sd"/>
+                        <constraint firstItem="BII-pG-Ezb" firstAttribute="leading" secondItem="aQM-jT-g18" secondAttribute="leading" constant="20" symbolic="YES" id="qyl-R2-itU"/>
+                        <constraint firstItem="kya-L7-iy6" firstAttribute="top" secondItem="bZS-Bh-CFp" secondAttribute="bottom" constant="8" symbolic="YES" id="syt-Ld-Fj2"/>
+                        <constraint firstItem="AWK-F7-Hc7" firstAttribute="width" secondItem="BII-pG-Ezb" secondAttribute="width" id="xaB-LB-Uvj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aQM-jT-g18" secondAttribute="bottom" id="0cm-fz-K4K"/>
+                <constraint firstAttribute="trailing" secondItem="aQM-jT-g18" secondAttribute="trailing" id="8px-8I-FDH"/>
+                <constraint firstItem="aQM-jT-g18" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HSo-12-IMO"/>
+                <constraint firstItem="aQM-jT-g18" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VlE-FR-QgY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="141" y="150.5"/>
+        </view>
+    </objects>
+</document>
