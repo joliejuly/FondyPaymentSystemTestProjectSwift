@@ -46,7 +46,7 @@ final class ViewController: UIViewController {
         
         activityIndicator.hidesWhenStopped = true
         
-        //set up api with merchant ID and web view
+        // USE YOUR OWN MERCHANT ID
         api = PSCloudipspApi(merchant: 1396424, andCloudipspView: webView)
        
     }
@@ -110,8 +110,6 @@ final class ViewController: UIViewController {
     @IBAction func payButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
         if isValidFields() {
-            let orderID = String(format: "dn_%ld", Double(NSDate().timeIntervalSince1970))
-            
             guard let priceText = priceTextField.text, !priceText.isEmpty,
                 let price = Int(priceText)
             else { return }
@@ -123,9 +121,12 @@ final class ViewController: UIViewController {
             guard let email = emailTextField.text, !email.isEmpty else { return }
             
             let currency = getCurrency(textCurrency)
-            let order = PSOrder(order: price, aCurrency: currency, aIdentifier: orderID, aAbout: description)
-            order?.reservationData = "eyJwaG9uZW1vYmlsZSI6IjE1MDI3MTIzMTEiLCJjdXN0b21lcl9hZGRyZXNzIjoiM3JkIFN0cmVldCIsImN1c3RvbWVyX2NvdW50cnkiOiJDQSIsImN1c3RvbWVyX3N0YXRlIjoiT04iLCJjdXN0b21lcl9uYW1lIjoiWXZvbm5lIFRoaWJhdWx0IiwiY3VzdG9tZXJfY2l0eSI6IkFsYmVydGEiLCJjdXN0b21lcl96aXAiOiI0MiJ9"
-    
+            
+            let randomString = NSUUID().uuidString
+            let randomID = NSUUID().uuidString
+            
+            let order = PSOrder(order: price, aCurrency: currency, aIdentifier: randomID, aAbout: randomString)
+
             order?.email = email
             
             //self parameter is a error-handler delegate
@@ -137,8 +138,6 @@ final class ViewController: UIViewController {
             }
         }
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult" {
@@ -172,7 +171,6 @@ final class ViewController: UIViewController {
     }
     
     @objc func keyBoardDillShow(notification: NSNotification) {
-        //get the size of the keyboard
         guard let keyboardSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? CGRect else { return }
         
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
@@ -260,18 +258,15 @@ extension ViewController: PSPayCallbackDelegate {
     }
     
     func onPaidFailure(_ error: Error!) {
-        
-        guard let error = error as NSError? else { return }
-        if error.code == Int(PSPayErrorCodeFailure.rawValue) {
+        var errorDescription: String?
+        if let error = error as NSError?, error.code == Int(PSPayErrorCodeFailure.rawValue) {
             let info = error.userInfo as NSDictionary
-            guard let errorCode = info.value(forKey: "error_code") as? String,
-                let errorMessage = info.value(forKey: "error_message") as? String else { return }
-            result = String(format: "PayError. Code %@\nDescription: %@", errorCode, errorMessage)
-        } else {
-            result = String(format: "Error: %@", error.localizedDescription)
+            let errorCode = info.value(forKey: "error_code") as? Int ?? 0
+            let errorMessage = info.value(forKey: "error_message") as? String ?? error.localizedDescription
+            errorDescription = "PayError. Code \(errorCode)\n Description: \(errorMessage)"
         }
-        performSegue(withIdentifier: "toResult", sender: self)
         taskDidFinished()
+        showMessage(with: errorDescription ?? "Unknown error occured")
     }
 
     
@@ -293,9 +288,7 @@ extension ViewController: PSPayCallbackDelegate {
     private func showMessage(with text: String) {
         let alertController = UIAlertController(title: nil, message: text, preferredStyle: .alert)
         present(alertController, animated: true, completion: nil)
-        
-        // the delay of one second
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             alertController.dismiss(animated: true, completion: nil)
         }
     }
